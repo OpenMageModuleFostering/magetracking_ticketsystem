@@ -1,45 +1,32 @@
 <?php
-
 /**
-
- * Sofhere SofTicket Magento Component
-
+ * Magento Community Edition
  *
-
  * NOTICE OF LICENSE
-
  *
-
- * This source file is subject to the GNU (3.0)
-
- * that is bundled with this package in the file LICENSE.txt.
-
+ * This source file is subject to the Magento Community Edition License
+ * that is bundled with this package in the file LICENSE_EE.txt.
  * It is also available through the world-wide-web at this URL:
-
- * http://opensource.org/licenses/gpl-3.0.html
-
+ * http://www.magentocommerce.com/license/community-edition
  * If you did not receive a copy of the license and are unable to
-
  * obtain it through the world-wide-web, please send an email
-
- * to license@sofhere.com so we can send you a copy immediately.
-
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *  
  * 
+ * @category    MageTracking
+ * @package     MageTracking_TicketSystem
+ * @created     Manmeet Kaur 27th Sep,2014
+ * @author      Clarion magento team<Manmeet Kaur>   
 
- * @category	design_default
-
- * @author 		sofhere.com
-
- * @package		Sofhere_SofTicket
-
- * @copyright  	Copyright (c) 2008-2009 Sofhere IT Solutions.(http://www.sofhere.com)
-
- * @version 	0.5 beta
-
- * @license		http://opensource.org/licenses/gpl-3.0.html GNU GENERAL PUBLIC LICENSE (GNU 3.0) 
-
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://www.magentocommerce.com/license/community-edition
  */
-
 
 
 require 'MageTracking/TicketSystem/Helper/Ticket.php'; 
@@ -165,13 +152,13 @@ class MageTracking_TicketSystem_IndexController extends Mage_Core_Controller_Fro
 
     	$data= $this->getRequest()->getPost();
 
-		//print_r($data);die();
+		
 
     	if ($data && $data['ID'] && $data['ID'] >0 ) {
 
             try {
 
-            	//$repid=$data['rep'];
+            	
 
             	$id=$data['ID'];
 
@@ -248,20 +235,19 @@ class MageTracking_TicketSystem_IndexController extends Mage_Core_Controller_Fro
     {
 
         $data= $this->getRequest()->getPost();    
-        //print_r($data);die();
+        
         $connection = Mage::getSingleton('core/resource')->getConnection('core_read');
-        //$select = "SELECT * from ticket_tickets where status NOT LIKE 'CLOSED' AND email = '".$data['email']."' ";
+        
 		$select = "SELECT * from mticketing_tickets where status NOT LIKE 'CLOSED' AND email = '".$data['email']."' ";
         $rowArray = $connection->fetchAll($select);   //return row       
         $ticket_id = $rowArray[0]['ID']; 
         $ticket_count = count($rowArray);
-        //print_r($data['email']);die();
-    	//if ($data && $ticket_count==0) {
+       
                  
             try {
 
 		    	$ticket = new Ticket();
-//echo "look";die();
+
 	    		$id=Mage::helper('ticketsystem')->getTicketID();
 
 				$ticket->id=$id;
@@ -337,31 +323,7 @@ class MageTracking_TicketSystem_IndexController extends Mage_Core_Controller_Fro
 
             }
 
-       // }
-	   /*
-        else
-        {
-            // To get the refrence ID
-            $connection = Mage::getSingleton('core/resource')->getConnection('core_read');
-            $select_message_id = "SELECT id from ticket_messages where ticket = '".$ticket_id."'";
-            $rowArray_message = $connection->fetchRow($select_message_id);   //return row  
-            
-            $connection = Mage::getSingleton('core/resource')->getConnection('core_write');
-            $connection->beginTransaction();
-            $fields = array();
-            $fields['ticket']= $ticket_id;        
-            $fields['message']= $data['message'];
-            $fields['reference']= $rowArray_message['id'];
-
-            $connection->insert('ticket_answers', $fields);
-            $connection->commit(); 
-            
-            Mage::getSingleton('core/session')->addSuccess('Ticket was successfully saved');
-            $this->_redirectSuccess(Mage::getUrl('*//*/index', array('_secure'=>true)));
-            return;
-              
-        }*/
-
+      
         $this->_redirectError(Mage::getUrl('*/*/edit', array('id'=>$id)));
 
     }

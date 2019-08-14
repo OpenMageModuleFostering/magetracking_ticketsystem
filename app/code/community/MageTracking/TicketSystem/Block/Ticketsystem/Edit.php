@@ -1,25 +1,32 @@
 <?php
 /**
- * Sofhere SofTicket Magento Component
+ * Magento Community Edition
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the GNU (3.0)
- * that is bundled with this package in the file LICENSE.txt.
+ * This source file is subject to the Magento Community Edition License
+ * that is bundled with this package in the file LICENSE_EE.txt.
  * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/gpl-3.0.html
+ * http://www.magentocommerce.com/license/community-edition
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
- * to license@sofhere.com so we can send you a copy immediately.
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *  
  * 
- * @category	design_default
- * @author 		sofhere.com
- * @package		Sofhere_SofTicket
- * @copyright  	Copyright (c) 2008-2009 Sofhere IT Solutions.(http://www.sofhere.com)
- * @version 	0.5 beta
- * @license		http://opensource.org/licenses/gpl-3.0.html GNU GENERAL PUBLIC LICENSE (GNU 3.0) 
- */
+ * @category    MageTracking
+ * @package     MageTracking_TicketSystem
+ * @created     Manmeet Kaur 22nd Sep,2014
+ * @author      Clarion magento team<Manmeet Kaur>   
 
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://www.magentocommerce.com/license/community-edition
+ */
 
 class MageTracking_TicketSystem_Block_Ticketsystem_Edit extends Mage_Core_Block_Template
 {
@@ -69,12 +76,12 @@ class MageTracking_TicketSystem_Block_Ticketsystem_Edit extends Mage_Core_Block_
     
  	public function getMessage($ticketId){
  		
- 			//$reps=Mage::helper('ticketsystem')->getAllRepresantatives(true);
+ 			
  			$answers='';
 			$model_ans  = Mage::getModel('ticketsystem/answers');
 			foreach ($model_ans->getCollection()->addFieldToFilter('ticket',$ticketId)->load() as $item){
 				$message=$item->getData('message');
-				//$rep=$item->getData('rep');
+				
 				$timestamp=$item->getData('timestamp');
 				$represantative='';
 				$answers .='('.$timestamp.') '.$message."<br>";

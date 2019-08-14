@@ -1,23 +1,32 @@
 <?php
-/**********************************************************************************
-* eTicket – http://www.eticketsupport.com                                         *
-* by Digital Frontiers, UTO                                                       *
-***********************************************************************************
-* Software Version: eTicket 1.7.3                                                 *
-* Software by: Digital Frontiers, UTO (http://www.eticketsupport.com)             *
-* Copyright 2008 by: Digital Frontiers, UTO (http://www.eticketsupport.com)       *
-* Support, News, Updates at: http://www.eticketsupport.com                        *
-***********************************************************************************
-* This program is free software; you may redistribute it and/or modify it under   *
-* the terms of the provided license as published by Digital Frontiers, UTO.       *
-*                                                                                 *
-* This program is distributed in the hope that it is and will be useful, but      *
-* WITHOUT ANY WARRANTIES; without even any implied warranty of MERCHANTABILITY    *
-* or FITNESS FOR A PARTICULAR PURPOSE.                                            *
-*                                                                                 *
-* See the "license.txt" file for details of the eTicket license.                  *
-* The latest version can always be found at http://www.eticketsupport.com.        *
-**********************************************************************************/
+/**
+ * Magento Community Edition
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Community Edition License
+ * that is bundled with this package in the file LICENSE_EE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magentocommerce.com/license/community-edition
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *  
+ * 
+ * @category    MageTracking
+ * @package     MageTracking_TicketSystem
+ * @created     Manmeet Kaur 25th Sep,2014
+ * @author      Clarion magento team<Manmeet Kaur>   
+
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://www.magentocommerce.com/license/community-edition
+ */
 
 	//Note: Moved some of the standard functions in here...
 	/* Clean Input (html2text,text2html) Start */
@@ -399,7 +408,7 @@
 	        $pri = 3;
 	    }
 		$db_settings['mail_method'] = "mail";
-//print_r($db_settings['mail_method']);die();
+
 	    # SEND THE EMAIL
 	    if ($db_settings['mail_method'] == "smtp") {
 	        $mail->IsSMTP();

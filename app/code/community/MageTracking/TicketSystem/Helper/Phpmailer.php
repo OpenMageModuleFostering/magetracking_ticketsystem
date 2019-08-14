@@ -1,35 +1,31 @@
 <?php
-/*~ class.phpmailer.php
-.---------------------------------------------------------------------------.
-|  Software: PHPMailer - PHP email class                                    |
-|   Version: 2.2.1                                                          |
-|   Contact: via sourceforge.net support pages (also www.codeworxtech.com)  |
-|      Info: http://phpmailer.sourceforge.net                               |
-|   Support: http://sourceforge.net/projects/phpmailer/                     |
-| ------------------------------------------------------------------------- |
-|    Author: Andy Prevost (project admininistrator)                         |
-|    Author: Brent R. Matzelle (original founder)                           |
-| Copyright (c) 2004-2007, Andy Prevost. All Rights Reserved.               |
-| Copyright (c) 2001-2003, Brent R. Matzelle                                |
-| ------------------------------------------------------------------------- |
-|   License: Distributed under the Lesser General Public License (LGPL)     |
-|            http://www.gnu.org/copyleft/lesser.html                        |
-| This program is distributed in the hope that it will be useful - WITHOUT  |
-| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
-| FITNESS FOR A PARTICULAR PURPOSE.                                         |
-| ------------------------------------------------------------------------- |
-| We offer a number of paid services (www.codeworxtech.com):                |
-| - Web Hosting on highly optimized fast and secure servers                 |
-| - Technology Consulting                                                   |
-| - Oursourcing (highly qualified programmers and graphic designers)        |
-'---------------------------------------------------------------------------'
-
 /**
- * PHPMailer - PHP email transport class
- * NOTE: Designed for use with PHP version 5 and up
- * @package PHPMailer
- * @author Andy Prevost
- * @copyright 2004 - 2008 Andy Prevost
+ * Magento Community Edition
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Community Edition License
+ * that is bundled with this package in the file LICENSE_EE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magentocommerce.com/license/community-edition
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *  
+ * 
+ * @category    MageTracking
+ * @package     MageTracking_TicketSystem
+ * @created     Manmeet Kaur 29th Sep,2014
+ * @author      Clarion magento team<Manmeet Kaur>   
+
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://www.magentocommerce.com/license/community-edition
  */
 
 class PHPMailer {
@@ -283,7 +279,7 @@ class PHPMailer {
    * Sets Mailer to send message using SMTP.
    * @return void
    */
-  public function IsSMTP() {echo  "1";die();
+  public function IsSMTP() {
     $this->Mailer = 'smtp';
   }
 
@@ -291,7 +287,7 @@ class PHPMailer {
    * Sets Mailer to send message using PHP mail() function.
    * @return void
    */
-  public function IsMail() {//echo  "2";die();
+  public function IsMail() {
     $this->Mailer = 'mail';
   }
 
@@ -299,7 +295,7 @@ class PHPMailer {
    * Sets Mailer to send message using the $Sendmail program.
    * @return void
    */
-  public function IsSendmail() {echo  "3";die();
+  public function IsSendmail() {
     $this->Mailer = 'sendmail';
   }
 
@@ -307,7 +303,7 @@ class PHPMailer {
    * Sets Mailer to send message using the qmail MTA.
    * @return void
    */
-  public function IsQmail() {echo  "4";die();
+  public function IsQmail() {
     $this->Sendmail = '/var/qmail/bin/sendmail';
     $this->Mailer   = 'sendmail';
   }
@@ -511,7 +507,7 @@ class PHPMailer {
    * @access public
    * @return bool
    */
-  public function SmtpSend($header, $body) {echo  "here4";die();
+  public function SmtpSend($header, $body) {
     include_once($this->PluginDir . 'Smtp.php');
     $error = '';
     $bad_rcpt = array();
@@ -578,7 +574,7 @@ class PHPMailer {
    * @access public
    * @return bool
    */
-  public function SmtpConnect() {echo  "here5";die();
+  public function SmtpConnect() {
     if($this->smtp == NULL) {
       $this->smtp = new SMTP();
     }
