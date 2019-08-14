@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MageTracking_TicketSystem>
+            <version>1.2.0</version> 
+        </MageTracking_TicketSystem>
+    </modules>
+    <frontend>
+        <routers>
+            <ticketsystem>
+                <use>standard</use>
+                <args>
+                    <module>MageTracking_TicketSystem</module>
+                    <frontName>ticketsystem</frontName>
+                </args>
+            </ticketsystem>
+        </routers>
+        <translate>
+            <modules>
+                <MageTracking_TicketSystem>
+                    <files>
+                        <default>MageTracking_TicketSystem.csv</default>
+                    </files>
+                </MageTracking_TicketSystem>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <ticketsystem>
+                    <file>ticketsystem.xml</file>
+                </ticketsystem>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<ticketsystem>
+				<use>admin</use>
+				<args>
+					<module>MageTracking_TicketSystem</module>
+					<frontName>ticketsystem</frontName>
+				</args>
+			</ticketsystem>
+        </routers>
+    </admin>
+   <adminhtml>
+		 <menu>
+			<ticketsystem translate="title" module="ticketsystem">
+				<title>Ticketing System</title>
+				<sort_order>71</sort_order>               
+				<children>
+					<ticket translate="title" module="ticketsystem">
+						<title>View Tickets</title>
+						<sort_order>0</sort_order>
+						<action>ticketsystem/adminhtml_ticketsystem</action>
+					</ticket>
+					<mail translate="title" module="ticketsystem">
+						<title>Mail Responses</title>
+						<sort_order>1</sort_order>
+						<action>ticketsystem/adminhtml_mail</action>
+					</mail>
+					<cat translate="title" module="ticketsystem">
+						<title>Departments</title>
+						<sort_order>2</sort_order>
+						<action>ticketsystem/adminhtml_cat</action>
+					</cat>
+					<setting translate="title" module="ticketsystem">
+						<title>Settings</title>
+						<sort_order>4</sort_order>
+						<action>ticketsystem/adminhtml_setting</action>
+					</setting>
+				</children>
+			</ticketsystem>
+		</menu>
+		<acl>
+            <resources>
+                <admin>
+                    <children>
+                    	<ticketsystem>
+                            <title>TicketSystem</title>
+                            <sort_order>30</sort_order>
+                            <children>
+                                <ticket translate="title">
+                                    <title>View Tickets</title>
+                                </ticket>
+                                <mail translate="title">
+                                    <title>Mail Responses</title>
+                                </mail>
+                                <cat translate="title">
+                                    <title>Departments</title>
+                                </cat>
+                                <setting translate="title">
+                                    <title>Settings</title>
+                                </setting>
+                            </children>
+                        </ticketsystem>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <translate>
+            <modules>
+                <MageTracking_TicketSystem>
+                    <files>
+                        <default>MageTracking_TicketSystem.csv</default>
+                    </files>
+                </MageTracking_TicketSystem>
+            </modules>
+        </translate>
+		<layout>
+			<updates>
+				<ticketsystem>
+					<file>ticketsystem.xml</file>
+				</ticketsystem>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <ticketsystem>
+                <class>MageTracking_TicketSystem_Model</class>
+                <resourceModel>ticketsystem_mysql4</resourceModel>
+            </ticketsystem>
+            <ticketsystem_mysql4>
+                <class>MageTracking_TicketSystem_Model_Mysql4</class>
+                <entities>
+                    <ticketsystem>
+                        <table>mticketing_tickets</table>
+                    </ticketsystem>
+                    <mail>
+                        <table>mticketing_settings</table>
+                    </mail>
+                    <cats>
+                        <table>mticketing_categories</table>
+                    </cats>
+                    <messages>
+                        <table>mticketing_messages</table>
+                    </messages>
+                    <answers>
+                        <table>mticketing_answers</table>
+                    </answers>
+                    <settings>
+                        <table>mticketing_settings</table>
+                    </settings>
+                </entities>
+            </ticketsystem_mysql4>
+        </models>
+        <resources>
+            <ticketsystem_setup>
+                <setup>
+                    <module>MageTracking_TicketSystem</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ticketsystem_setup>
+            <ticketsystem_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ticketsystem_write>
+            <ticketsystem_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ticketsystem_read>
+        </resources>
+        
+        <blocks>
+             <customer>
+            	<rewrite>
+            		<account_navigation>MageTracking_TicketSystem_Block_Ticketsystem_Navigation</account_navigation>
+                	<ticketsystem_view>MageTracking_TicketSystem_Block_Ticketsystem_View</ticketsystem_view>
+                	<ticketsystem_edit>MageTracking_TicketSystem_Block_Ticketsystem_Edit</ticketsystem_edit>
+                </rewrite>
+            </customer>
+            <ticketsystem>
+                <class>MageTracking_TicketSystem_Block</class>
+            </ticketsystem>
+        </blocks>
+        
+        <helpers>
+            <ticketsystem>
+                <class>MageTracking_TicketSystem_Helper</class>
+            </ticketsystem>
+        </helpers>
+    </global>
+</config>

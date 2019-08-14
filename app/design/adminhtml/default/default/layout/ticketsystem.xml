@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <ticketsystem_adminhtml_ticketsystem_index>
+        <reference name="content">
+            <block type="ticketsystem/adminhtml_ticketsystem" name="ticketsystem" />
+        </reference>
+    </ticketsystem_adminhtml_ticketsystem_index>
+    
+    <ticketsystem_adminhtml_cat_index>
+        <reference name="content">
+            <block type="ticketsystem/adminhtml_cat" name="cat" />
+        </reference>
+    </ticketsystem_adminhtml_cat_index>
+    
+    
+    <ticketsystem_adminhtml_rep_index>
+        <reference name="content">
+            <block type="ticketsystem/adminhtml_rep" name="rep" />
+        </reference>
+    </ticketsystem_adminhtml_rep_index>
+</layout>

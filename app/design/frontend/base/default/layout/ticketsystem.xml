@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<layout>
+
+    <default>
+	    <reference name="content">
+	        	<block type="customer/ticketsystem_view" name="magetracking_ticketsystem_view"  module="ticketsystem" template="ticketsystem/view.phtml"/>
+	    </reference>
+	    <reference name="left">
+	        	<block type="customer/account_navigation" name="magetracking_ticketsystem_navigation" before="-" template="ticketsystem/navigation.phtml">
+                	<action method="addLink" translate="label" module="ticketsystem"><name>ticketsystem</name><path>ticketsystem/</path><label>Ticketing System</label></action>
+            	</block>
+        </reference>   
+     </default>
+     
+      <ticketsystem_index_index>
+	        <update handle="customer_account"/>
+      </ticketsystem_index_index>
+
+      <ticketsystem_index_edit>
+	        
+	        <reference name="content">
+	        	<block type="customer/ticketsystem_edit" name="magetracking_ticketsystem_edit" template="ticketsystem/edit.phtml"/>
+	        </reference>
+      </ticketsystem_index_edit>
+	  <ticketsystem_index_add>
+			
+	        <reference name="content">
+	        	<block type="customer/ticketsystem_edit" name="magetracking_ticketsystem_add" template="ticketsystem/add.phtml"/>
+	        </reference>
+			
+      </ticketsystem_index_add>
+	  
+     <customer_logged_in>
+			<!--<update handle="customer_account"/>-->
+	        
+	</customer_logged_in>
+	
+	
+
+</layout>
+
+    

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MageTracking_TicketSystem>
+            <active>true</active>
+            <codePool>community</codePool>
+        </MageTracking_TicketSystem>
+    </modules>
+</config> 
