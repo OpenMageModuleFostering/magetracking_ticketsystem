@@ -1,31 +1,23 @@
 <?php
 /**
- * Magento Community Edition
+ * Sofhere SofTicket Magento Component
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Magento Community Edition License
- * that is bundled with this package in the file LICENSE_EE.txt.
+ * This source file is subject to the GNU (3.0)
+ * that is bundled with this package in the file LICENSE.txt.
  * It is also available through the world-wide-web at this URL:
- * http://www.magentocommerce.com/license/community-edition
+ * http://opensource.org/licenses/gpl-3.0.html
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *  
+ * to license@sofhere.com so we can send you a copy immediately.
  * 
- * @category    MageTracking
- * @package     MageTracking_TicketSystem
- * @created     Manmeet Kaur 24th Sep,2014
- * @author      Clarion magento team<Manmeet Kaur>   
-
- * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://www.magentocommerce.com/license/community-edition
+ * @category	design_default
+ * @author 		sofhere.com
+ * @package		Sofhere_SofTicket
+ * @copyright  	Copyright (c) 2008-2009 Sofhere IT Solutions.(http://www.sofhere.com)
+ * @version 	0.5 beta
+ * @license		http://opensource.org/licenses/gpl-3.0.html GNU GENERAL PUBLIC LICENSE (GNU 3.0) 
  */
 
 class MageTracking_TicketSystem_Block_Adminhtml_Ticketsystem_Mail_Tab_Form extends Mage_Adminhtml_Block_Widget_Form
@@ -132,7 +124,31 @@ class MageTracking_TicketSystem_Block_Adminhtml_Ticketsystem_Mail_Tab_Form exten
           'required'  => true,
           'name'      => 'answer_msg',
 	  ));
-	      
+	  /*	  
+	  $fieldset = $form->addFieldset('ticketsystem_transresponse', array('legend'=>Mage::helper('ticketsystem')->__('Representative Transfer Notification').'&nbsp;&nbsp;&nbsp;: '.Mage::helper('ticketsystem')->__('Message sent when a ticket has been transfered to a different representative.')));
+      $fieldset->addField('rep_trans_response', 'checkbox', array(
+          'label'     => Mage::helper('ticketsystem')->__('Enable'),
+          'required'  => false,
+          'name'      => 'rep_trans_response',
+          'value'   => 1,
+          'checked'   => $data->getData('rep_trans_response')
+      ));
+      
+      $fieldset->addField('rep_trans_subj', 'text', array(
+          'label'     => Mage::helper('ticketsystem')->__('Subject'),
+          'class'     => 'required-entry',
+          'required'  => true,
+          'name'      => 'rep_trans_subj',
+      ));
+
+      $fieldset->addField('rep_trans_msg', 'textarea', array(
+          'label'     => Mage::helper('ticketsystem')->__('Message'),
+          'class'     => 'required-entry',
+          'required'  => true,
+          'name'      => 'rep_trans_msg',
+	  ));*/
+	  
+	    
 
 	  
       if ( Mage::getSingleton('adminhtml/session')->getTicketsystemMailData() )
