@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/MageTracking_TicketSystem",
+    "name": "OpenMageModuleFostering\/MageTracking_TicketSystem",
     "type": "magento-module",
     "license": "Open-Software-License-(OSL)",
     "homepage": "",
     "description": "Allow customers to post their queries and concerns to admin.",
     "authors": [
-    {
-        "name": "Manmeet Kaur",
-        "email": "manmeetkaur.g@gmail.com"
-    }
-],
+        {
+            "name": "Manmeet Kaur",
+            "email": "manmeetkaur.g@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
